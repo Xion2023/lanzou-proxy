@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝奏云代理服务</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 { color: #333; margin-bottom: 20px; font-size: 2em; }
+        .status { 
+            display: inline-block;
+            padding: 8px 16px;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .info { 
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .info h3 { color: #374151; margin-bottom: 10px; }
+        .info code {
+            background: #1f2937;
+            color: #10b981;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .endpoint {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        .note {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 蓝奏云代理服务</h1>
+        <span class="status">✓ 运行中</span>
+        
+        <div class="info">
+            <h3>API 端点</h3>
+            <div class="endpoint" id="endpoint">
+                https://your-project.vercel.app/api/proxy
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>使用方法</h3>
+            <p>发送 POST 请求到上面的端点，请求体格式：</p>
+            <pre style="background: #1f2937; color: #10b981; padding: 15px; border-radius: 6px; margin-top: 10px; overflow-x: auto;">
+{
+  "url": "https://api.ilanzou.com/...",
+  "method": "POST",
+  "headers": {...},
+  "body": "..."
+}</pre>
+        </div>
+        
+        <div class="info">
+            <h3>特性</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0;">✅ 免费使用</li>
+                <li style="padding: 8px 0;">✅ 无请求限制</li>
+                <li style="padding: 8px 0;">✅ 全球 CDN 加速</li>
+                <li style="padding: 8px 0;">✅ 自动 HTTPS</li>
+            </ul>
+        </div>
+        
+        <div class="note">
+            <strong>注意：</strong>此代理服务仅用于绕过 IP 封禁，请合理使用。
+        </div>
+    </div>
+    
+    <script>
+        // 自动填充当前域名
+        const endpoint = document.getElementById('endpoint');
+        endpoint.textContent = window.location.origin + '/api/proxy';
+    </script>
+</body>
+</html>
